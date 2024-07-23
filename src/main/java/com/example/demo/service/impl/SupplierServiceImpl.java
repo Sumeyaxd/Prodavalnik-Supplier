@@ -23,22 +23,22 @@ public class SupplierServiceImpl implements SupplierService {
 
 
     @Override
-    public List<SupplierDTO> getAllPartners() {
+    public List<SupplierDTO> getAllSuppliers() {
         return this.supplierRepository.findAll().stream()
                 .map(supplier -> this.modelMapper.map(supplier, SupplierDTO.class))
                 .toList();
     }
 
     @Override
-    public SupplierDTO addPartner(AddSupplierDTO addPartnerDTO) {
-        Supplier supplier = this.modelMapper.map(addPartnerDTO, Supplier.class);
+    public SupplierDTO addSupplier(AddSupplierDTO addSupplierDTO) {
+        Supplier supplier = this.modelMapper.map(addSupplierDTO, Supplier.class);
         this.supplierRepository.saveAndFlush(supplier);
 
         return this.modelMapper.map(supplier, SupplierDTO.class);
     }
 
     @Override
-    public void deletePartner(Long id) {
+    public void deleteSupplier(Long id) {
         this.supplierRepository.deleteById(id);
     }
 }
