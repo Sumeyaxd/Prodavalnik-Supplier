@@ -35,14 +35,14 @@ public class SupplierController {
 
         LOGGER.info("Going to add a supplier {}", addSupplierDTO);
 
-        SupplierDTO partnerDTO = this.supplierService.addSupplier(addSupplierDTO);
+        SupplierDTO supplierDTO = this.supplierService.addSupplier(addSupplierDTO);
         return ResponseEntity.
                 created(ServletUriComponentsBuilder
                         .fromCurrentRequest()
                         .path("/{id}")
-                        .buildAndExpand(partnerDTO.getId())
+                        .buildAndExpand(supplierDTO.getId())
                         .toUri()
-                ).body(partnerDTO);
+                ).body(supplierDTO);
     }
 
     @DeleteMapping("/{id}")
