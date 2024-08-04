@@ -7,9 +7,9 @@ import com.example.demo.model.entity.Supplier;
 import java.util.List;
 
 public interface SupplierService {
-    List<SupplierDTO> getAllPartners();
+    List<SupplierDTO> getAllSuppliers();
 
-    SupplierDTO addPartner(AddSupplierDTO addPSupplierDTO);
+    SupplierDTO addSupplier(AddSupplierDTO addSupplierDTO);
 
-    void deletePartner(Long id);
+    void deleteSupplier(Long id);
 }
